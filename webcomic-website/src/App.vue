@@ -2,8 +2,10 @@
   <div id="app">
     <section class="main-container">
       <Banner></Banner>
-      <Panel></Panel>
-      <NavButtons></NavButtons>
+      <NavButtons v-on:pageChanged="pageChanged"></NavButtons>
+      <Panel v-bind:pageNumber="pageNumber"
+             v-bind:panelText="pageNumberText"></Panel>
+      <NavButtons v-on:pageChanged="pageChanged"></NavButtons>
     </section>
   </div>
 </template>
@@ -11,7 +13,8 @@
 <script>
   import Panel from './components/Panel.vue'
   import Banner from './components/Banner.vue'
-  import NavButtons from"./components/NavButtons.vue"
+  import NavButtons from "./components/NavButtons.vue"
+  import ComicText from "./assets/ComicText.json"
 
   export default {
     name: 'app',
@@ -19,6 +22,33 @@
       Banner,
       Panel,
       NavButtons
+    },
+    data() {
+      return {
+        pageNumber: 1,
+        ComicText: ComicText
+      }
+    },
+    methods : {
+      pageChanged(amount) {
+        if (amount > 1 || this.pageNumber + amount > 9) {
+          this.pageNumber = 9
+        } else if (amount < -1 || this.pageNumber + amount < 1) {
+          this.pageNumber = 1
+        } else {
+          this.pageNumber += amount
+        }
+      }
+    },
+    computed: {
+      pageNumberText: function () {
+        for (var data in this.ComicText) {
+          if (data == this.pageNumber) {
+            console.log(data)
+            return data.text
+          }
+        }
+      }
     }
   }
 </script>

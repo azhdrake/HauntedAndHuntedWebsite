@@ -1,19 +1,20 @@
 <template>
   <div class="panel">
     <img class="panel-img" v-bind:src = "generateURL" />
-    Test??
+    {{panelText}}
   </div>
 </template>
 
 <script>export default {
   name: 'Panel',
-  /*props: {
-    pageNumber: int,
-  },*/
+    props: {
+    pageNumber: Number,
+    panelText: String
+  },
   data() {
       return {
-        pageNumber: 1,
-        imgURLbase: "../assets/panels/Birdsong",
+       // pageNumber: 1,
+        imgURLbase: "/panels/Birdsong",
         imgURLend: ".png"
       }
     },

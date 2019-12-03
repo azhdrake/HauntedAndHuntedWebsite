@@ -1,10 +1,10 @@
 <template>
   <div class="nav-buttons">
-    <a class="butt"> &laquo; </a>
-    <a class="butt narrow"> &#8249; </a>
+    <a class="butt" v-on:click="$emit('pageChanged', -2)"> &laquo; </a>
+    <a class="butt narrow" v-on:click="$emit('pageChanged', -1)"> &#8249; </a>
     <span class="butt"> O </span>
-    <a class="butt narrow"> &#8250; </a>
-    <a class="butt"> &raquo; </a>
+    <a class="butt narrow" v-on:click="$emit('pageChanged', 1)"> &#8250; </a>
+    <a class="butt" v-on:click="$emit('pageChanged', 2)"> &raquo; </a>
   </div>
 </template>
 
