@@ -42,11 +42,13 @@
     },
     computed: {
       pageNumberText: function () {
-        for (var data in this.ComicText) {
-          if (data == this.pageNumber) {
-            console.log(data)
-            return data.text
-          }
+        if (this.ComicText) {
+          this.ComicText.forEach(function (pageInfo) {
+             if (pageInfo.PageNumber == this.pageNumber) {
+            console.log(pageInfo.PageNumber)
+               return pageInfo.text
+              }
+          })
         }
       }
     }
