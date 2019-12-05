@@ -42,27 +42,46 @@
     },
     computed: {
       pageNumberText: function () {
-        if (this.ComicText) {
-          this.ComicText.forEach(function (pageInfo) {
-             if (pageInfo.PageNumber == this.pageNumber) {
-            console.log(pageInfo.PageNumber)
-               return pageInfo.text
-              }
-          })
-        }
+        let pageText
+        this.ComicText.forEach(pageInfo => {
+          if (pageInfo.PageNumber == this.pageNumber) {
+            pageText = pageInfo.text
+          }
+        })
+        return pageText
       }
     }
   }
 </script>
 
 <style>
+   .renee{
+    color: rebeccapurple;
+  }
+  .charlie{
+    color: darkgreen;
+  }
+  .vin{
+    color: red;
+  }
+  .comic-text{
+    margin-bottom: .5em;
+  }
+  .naration-text{
+    font-weight: 550;
+  }
+
+  .top-links{
+
+  }
+
 section {
 	text-align: center;
-	width: 60%;
+	width: 75%;
 	padding: 1vw;
 	margin: 0 auto;
 	overflow:hidden;
-	background-color: #afafaf;
+	background-color: #E3C598;
 }
 
 img {
@@ -71,11 +90,6 @@ img {
 }
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  background-color: #65352C;
 }
 </style>

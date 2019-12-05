@@ -16,13 +16,13 @@
 <style scoped>
 .butt{
 	text-decoration: none;
-    display: inline-block;
-    padding: .25em .5em;
+  display: inline-block;
+  padding: .25em .5em;
 	text-align: center;
 	font-size: 2.5em;
 	border-radius: 50%;
-	background-color: #004201;
-	color: #00ff00;
+	background-color: #F59A44;
+	color: #CF5230;
 	margin: .25em;
 }
 

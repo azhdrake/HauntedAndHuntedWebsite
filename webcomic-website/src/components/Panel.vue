@@ -1,7 +1,7 @@
 <template>
   <div class="panel">
     <img class="panel-img" v-bind:src = "generateURL" />
-    {{panelText}}
+    <p class="panelText" v-html="panelText"></p>
   </div>
 </template>
 
@@ -26,5 +26,11 @@
 }</script>
 
 <style scoped>
-
+  .panelText{
+    padding: 1vw;
+    border: 4px solid #6E352C;
+    text-align: left;
+    background-color: white;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif
+  }
 </style>
