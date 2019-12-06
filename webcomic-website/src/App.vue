@@ -2,31 +2,23 @@
   <div id="app">
     <section class="main-container">
       <Banner></Banner>
-      <NavButtons v-on:pageChanged="pageChanged"></NavButtons>
-      <Panel v-bind:pageNumber="pageNumber"
-             v-bind:panelText="pageNumberText"></Panel>
-      <NavButtons v-on:pageChanged="pageChanged"></NavButtons>
+      <RouterView></RouterView>
     </section>
   </div>
 </template>
 
 <script>
-  import Panel from './components/Panel.vue'
   import Banner from './components/Banner.vue'
-  import NavButtons from "./components/NavButtons.vue"
-  import ComicText from "./assets/ComicText.json"
 
   export default {
     name: 'app',
     components: {
-      Banner,
-      Panel,
-      NavButtons
+      Banner
     },
     data() {
       return {
         pageNumber: 1,
-        ComicText: ComicText
+       // ComicText: ComicText
       }
     },
     methods : {
@@ -41,7 +33,7 @@
       }
     },
     computed: {
-      pageNumberText: function () {
+      /*pageNumberText: function () {
         let pageText
         this.ComicText.forEach(pageInfo => {
           if (pageInfo.PageNumber == this.pageNumber) {
@@ -49,47 +41,28 @@
           }
         })
         return pageText
-      }
+      }*/
     }
   }
 </script>
 
 <style>
-   .renee{
-    color: rebeccapurple;
+  hr{
+    border: 1px solid #CF5230;
   }
-  .charlie{
-    color: darkgreen;
-  }
-  .vin{
-    color: red;
-  }
-  .comic-text{
-    margin-bottom: .5em;
-  }
-  .naration-text{
-    font-weight: 550;
+  section {
+	  text-align: center;
+	  max-width: 50em;
+	  padding: 1vw;
+	  margin: 0 auto;
+	  overflow:hidden;
+	  background-color: #E3C598;
   }
 
-  .top-links{
-
+  body {
+    background-color: #65352C;
   }
-
-section {
-	text-align: center;
-	width: 75%;
-	padding: 1vw;
-	margin: 0 auto;
-	overflow:hidden;
-	background-color: #E3C598;
-}
-
-img {
-	object-fit: contain;
-	width:100%;
-}
-
-#app {
-  background-color: #65352C;
-}
+  a{
+    color: #CF5230;
+  }
 </style>

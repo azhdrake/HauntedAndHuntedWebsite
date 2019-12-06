@@ -4,8 +4,10 @@
     "\\webcomic-website",
     "\\webcomic-website\\src",
     "\\webcomic-website\\src\\assets",
-    "\\webcomic-website\\src\\components"
+    "\\webcomic-website\\src\\components",
+    "\\webcomic-website\\src\\router",
+    "\\webcomic-website\\src\\services"
   ],
-  "SelectedNode": "\\webcomic-website\\src\\main.js",
+  "SelectedNode": "\\webcomic-website\\src\\assets\\ComicText.json",
   "PreviewInSolutionExplorer": false
 }

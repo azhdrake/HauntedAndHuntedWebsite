@@ -1,7 +1,7 @@
 <template>
   <div class="Banner">
     <img src="../assets/Banner.png" />
-    <a class="top-links"> About </a> 
+    <router-link to="/about" class="top-links"> About </router-link> 
     <a class="top-links"> Cast </a> 
     <a class="top-links"> Archive </a> 
     <a class="top-links"> Search </a> 
