@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     comment: { type: DataTypes.STRING }
   })
 
-  Comment.sync({ force: true }).then(() =>
+  Comment.sync({ force: false }).then(() =>
     console.log("synced table"))
 
   return Comment

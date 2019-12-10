@@ -1,10 +1,10 @@
 <template>
   <div class="Banner">
-    <img src="../assets/Banner.png" />
+    <router-link to="/comic/1"><img src="../assets/Banner.png" /></router-link>
     <router-link to="/about" class="top-links"> About </router-link> 
     <router-link to="/cast" class="top-links"> Cast </router-link> 
     <router-link to="/archive" class="top-links"> Archive </router-link> 
-    <router-link to="/serach" class="top-links"> Search </router-link> 
+    <router-link to="/search" class="top-links"> Search </router-link> 
     <router-link to="/links" class="top-links"> Links </router-link> 
     <a class="top-links"> Blog </a>
   </div>
