@@ -17,8 +17,7 @@
     },
     data() {
       return {
-        pageNumber: 1,
-       // ComicText: ComicText
+       
       }
     },
     methods : {
@@ -47,6 +46,21 @@
 </script>
 
 <style>
+   .title{
+    color: #F59A44;
+    text-align: center;
+    text-shadow: 0 0 2px #000000;
+    font-size: 50px;
+    line-height: 5px;
+    padding: 0
+  }
+   .title-but-like-less-so{
+    color: #CF5230;
+    text-align: center;
+    font-size: 25px;
+    line-height: 5px;
+    padding: 0
+   }
   hr{
     border: 1px solid #CF5230;
   }

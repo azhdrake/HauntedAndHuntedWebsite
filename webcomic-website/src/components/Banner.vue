@@ -2,10 +2,10 @@
   <div class="Banner">
     <img src="../assets/Banner.png" />
     <router-link to="/about" class="top-links"> About </router-link> 
-    <a class="top-links"> Cast </a> 
-    <a class="top-links"> Archive </a> 
-    <a class="top-links"> Search </a> 
-    <a class="top-links"> Links </a> 
+    <router-link to="/cast" class="top-links"> Cast </router-link> 
+    <router-link to="/archive" class="top-links"> Archive </router-link> 
+    <router-link to="/serach" class="top-links"> Search </router-link> 
+    <router-link to="/links" class="top-links"> Links </router-link> 
     <a class="top-links"> Blog </a>
   </div>
 </template>

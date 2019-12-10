@@ -5,6 +5,10 @@ import App from './App.vue'
 import VueRouter from "vue-router"
 import router from "./router"
 
+import CommentAPIService from "@/services/CommentServices"
+
+Vue.prototype.$comment_api = CommentAPIService
+
 Vue.config.productionTip = false
 
 Vue.use(VueRouter)

@@ -4,6 +4,11 @@
       <Panel v-bind:pageNumber="pageNumber"
              v-bind:panelText="pageNumberText"></Panel>
       <NavButtons v-on:pageChanged="pageChanged"></NavButtons>
+      <hr />
+      <CommentTable v-bind:pageNumber="pageNumber"
+                    v-bind:comments="comments" 
+                    v-on:comment-added="newCommentAdded"
+                    v-on:comment-deleted="CommentDeleted"></CommentTable>
     </section>
 </template>
 
@@ -12,29 +17,54 @@
   import Banner from './Banner.vue'
   import NavButtons from "./NavButtons.vue"
   import ComicText from "../assets/ComicText.json"
+  import CommentTable from "./CommentsTable.vue"
 
   export default {
     name: 'app',
     components: {
       Banner,
       Panel,
-      NavButtons
+      NavButtons,
+      CommentTable
     },
     data() {
       return {
         pageNumber: 1,
-        ComicText: ComicText
+        ComicText: ComicText,
+        comments: []
       }
     },
     methods : {
       pageChanged(amount) {
-        if (amount > 1 || this.pageNumber + amount > 9) {
+        if (this.pageNumber + amount > 9 || this.pageNumber + amount < 1) {
+          return
+        }
+        else if (amount > 1) {
           this.pageNumber = 9
-        } else if (amount < -1 || this.pageNumber + amount < 1) {
+        } else if (amount < -1) {
           this.pageNumber = 1
         } else {
           this.pageNumber += amount
         }
+        this.$router.push({ name: "comic", params: { pageNumber: this.pageNumber } })
+      },
+      newCommentAdded(comment) {
+        this.$comment_api.addComment(comment).then(comment => {
+          this.updateComments()
+        }).catch(err => {
+          let msg = err.response.data.join(', ')
+          alert("Error adding comment.\n" + msg)
+        })
+      },
+      CommentDeleted(comment) {
+        this.$comment_api.deleteComment(comment.id).then(() => {
+          this.updateComments()
+        })
+      },
+      updateComments() {
+        this.$comment_api.getAllComments().then(comments => {
+          this.comments = comments
+        })
       }
     },
     computed: {
@@ -47,6 +77,10 @@
         })
         return pageText
       }
+    }, 
+    mounted() {
+      this.pageNumber = parseInt(this.$route.params.pageNumber)
+      this.updateComments()
     }
   }
 </script>

@@ -1,13 +1,14 @@
 {
   "ExpandedNodes": [
     "",
+    "\\model",
     "\\webcomic-website",
+    "\\webcomic-website\\routes",
     "\\webcomic-website\\src",
-    "\\webcomic-website\\src\\assets",
     "\\webcomic-website\\src\\components",
     "\\webcomic-website\\src\\router",
     "\\webcomic-website\\src\\services"
   ],
-  "SelectedNode": "\\webcomic-website\\src\\assets\\ComicText.json",
+  "SelectedNode": "\\model\\Comments.js",
   "PreviewInSolutionExplorer": false
 }
