@@ -13,7 +13,6 @@
   },
   data() {
       return {
-       // pageNumber: 1,
         imgURLbase: "/panels/Birdsong",
         imgURLend: ".png"
       }

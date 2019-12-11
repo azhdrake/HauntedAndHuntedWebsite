@@ -1,4 +1,4 @@
-import Router from "vue-router"
+import Router from "vue-router" // It's the router page baby. It links paths to vue components.
 
 import ComicPage from "@/components/ComicPage"
 import About from "@/components/About"
@@ -37,6 +37,10 @@ export default new Router({
     {
       path: "/archive",
       component: Archive
-    }
-  ]
+    },
+  ],
+  scrollBehavior(to, from, savedPosition) { // When you click a link this makes the page start at the scroll point that is the top of the content, rather then the same level of scrolled down that you were at when you clicked the link. 
+    // I decided to make it start below the banner for ease of comic reading.
+    return { x: 0, y: 250 }
+  }
 })

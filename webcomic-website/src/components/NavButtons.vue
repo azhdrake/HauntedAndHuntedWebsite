@@ -1,4 +1,4 @@
-<template>
+<template> <!-- The comic navigation buttons. Sends an int to the parent component so it knows which button was pressed. -->
   <div class="nav-buttons">
     <a class="butt" v-on:click="$emit('pageChanged', -2)"> &laquo; </a>
     <a class="butt narrow" v-on:click="$emit('pageChanged', -1)"> &#8249; </a>
@@ -12,7 +12,6 @@
   name: 'NavButtons'
 }</script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .butt{
 	text-decoration: none;
@@ -25,11 +24,9 @@
 	color: #CF5230;
 	margin: .25em;
 }
-
 .butt:hover{
 	background-color: lightgrey;
 }
-
 .narrow{
 	padding: .25em .65em;
 }

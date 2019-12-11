@@ -1,3 +1,5 @@
+// it's the database server config file!
+
 var express = require("express")
 var bodyParser = require("body-parser")
 var Sequelize = require("sequelize")

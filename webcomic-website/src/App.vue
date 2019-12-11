@@ -1,4 +1,4 @@
-<template>
+<template> <!-- The template for the site as a whole. The only constant I have is the header (banner.vue) -->
   <div id="app">
     <section class="main-container">
       <Banner></Banner>
@@ -14,38 +14,11 @@
     name: 'app',
     components: {
       Banner
-    },
-    data() {
-      return {
-       
-      }
-    },
-    methods : {
-      pageChanged(amount) {
-        if (amount > 1 || this.pageNumber + amount > 9) {
-          this.pageNumber = 9
-        } else if (amount < -1 || this.pageNumber + amount < 1) {
-          this.pageNumber = 1
-        } else {
-          this.pageNumber += amount
-        }
-      }
-    },
-    computed: {
-      /*pageNumberText: function () {
-        let pageText
-        this.ComicText.forEach(pageInfo => {
-          if (pageInfo.PageNumber == this.pageNumber) {
-            pageText = pageInfo.text
-          }
-        })
-        return pageText
-      }*/
     }
   }
 </script>
 
-<style>
+<style> /* Site wide styling */
    .title{
     color: #F59A44;
     text-align: center;
@@ -75,6 +48,7 @@
 
   body {
     background-color: #65352C;
+    margin: 0;
   }
   a{
     color: #CF5230;

@@ -1,15 +1,18 @@
 var express = require("express")
 var Sequelize = require("sequelize")
 
-module.exports = function (Comment) {
-  var router = express.Router()
+// What talks to the database. 
 
+module.exports = function (Comment) {
+  var router = express.Router() // makes the router.
+
+  // gets all the comments of the comment table.
   router.get("/comments", function (req, res, next) {
     Comment.findAll().then(comments => {
       return res.json(comments)
     })
   })
-
+  // posts a comment to the table.
   router.post("/comments", function (req, res, next) {
     Comment.create(req.body).then((data) => {
       return res.status(201).send("ok")
@@ -21,9 +24,8 @@ module.exports = function (Comment) {
       return next(err)
     })
   })
-
+  // deletes a comment based on its ID.
   router.delete("/comments/:id", function (req, res, next) {
-    //DELETE FROM students WHERE ID = id
     Comment.destroy({ where: { id: req.params.id } }).then(() => {
       return res.send("ok")
     }).catch(err => next(err))
