@@ -5,7 +5,7 @@
     <div class="title-but-like-less-so">It's super high tech! Press ctr-f to search!</div>
     <br /><hr />
     <div v-for="pageData in ComicText" v-bind:key="pageData.pageNumber">
-      <h3>Page {{pageData.PageNumber}}</h3>
+      <h3><router-link :to="URLStart + pageData.PageNumber">Page {{pageData.PageNumber}}</router-link></h3>
       <p class="pannel-text" v-html="pageData.text"></p>
       <hr class="smaller-bar" />
     </div>
@@ -18,8 +18,8 @@
     name: 'Search',
     data() {
       return {
-        ComicText: ComicText
-        
+        ComicText: ComicText,
+        URLStart: "/comic/"
       }
     }
   }

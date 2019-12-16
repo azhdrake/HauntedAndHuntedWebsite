@@ -12,8 +12,7 @@
   export default {
     name: "CommentRow",
     props: {
-      comment: Object,
-     // pageNumber: Number
+      comment: Object
     },
     methods: {
       deleteComment(comment) {
@@ -32,5 +31,6 @@
 
   table, th, td{
     border-collapse: collapse;
+    padding: .5em
   }
 </style>

@@ -8,6 +8,7 @@ import Search from "@/components/Search"
 import Archive from "@/components/Archive"
 
 export default new Router({
+//  mode: 'history',
   routes: [
     {
       path: "/",

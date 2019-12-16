@@ -1,10 +1,18 @@
 <template> <!-- The template for the site as a whole. The only constant I have is the header (banner.vue) -->
   <div id="app">
-    <section class="main-container">
-      <Banner></Banner>
-      <RouterView></RouterView>
-    </section>
-  </div>
+    <div class="bg-image misc">
+      <div class="bg-image misc-2">
+        <div class="bg-image haunted">
+          <div class="bg-image hunted">
+            <section class="main-container">
+              <Banner></Banner>
+              <RouterView></RouterView>
+            </section>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
 </template>
 
 <script>
@@ -45,7 +53,30 @@
 	  overflow:hidden;
 	  background-color: #E3C598;
   }
-
+  .haunted{
+    background-image: url("assets/HauntedSpeech.png");
+    background-position-x: 0;
+    background-position-y: 100%;
+  }
+  .hunted{
+    background-image: url("assets/HuntedSpeech.png");
+    background-position-x: 100%;
+    background-position-y: 100%;
+    }
+  .bg-image{
+    background-attachment:fixed;
+    background-size:25%;
+    background-repeat: no-repeat;
+  }
+  .misc-2{
+    background-image: url("assets/IDontKnowWhatThisSays.png");
+    background-size: 50%;
+    background-repeat:repeat-x;
+  }
+  .misc{
+    background-image: url("assets/MiscSpeech.png");
+    background-size: 50%;
+  }
   body {
     background-color: #65352C;
     margin: 0;

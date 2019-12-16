@@ -8,7 +8,8 @@
       <CommentTable v-bind:pageNumber="pageNumber"
                     v-bind:comments="comments" 
                     v-on:comment-added="newCommentAdded"
-                    v-on:comment-deleted="CommentDeleted"></CommentTable>
+                    v-on:comment-deleted="CommentDeleted">
+      </CommentTable>
     </section>
 </template>
 
@@ -20,7 +21,7 @@
   import CommentTable from "./CommentsTable.vue"
 
   export default {
-    name: 'Comic Page',
+    name: 'ComicPage',
     components: {
       Banner,
       Panel,
