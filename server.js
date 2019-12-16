@@ -31,7 +31,7 @@ if (db_url) {
 
 let comment = require("./model/Comments.js")(sequelize, Sequelize)
 
-var app = express
+var app = express()
 app.use(bodyParser.json())
 
 app.use(express.static(path.join(__dirname, "webcomic-website", "dist")))
