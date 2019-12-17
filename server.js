@@ -8,6 +8,8 @@ var path = require("path")
 
 db_url = process.env.DATABASE_URL
 
+//config Sequelize, ensure that we're using the approprate database for local vs live.
+
 let sequelize
 
 if (db_url) {
@@ -29,8 +31,10 @@ if (db_url) {
     .catch(err => console.log("error connecting", err))
 }
 
+// uses the comment table model
 let comment = require("./model/Comments.js")(sequelize, Sequelize)
 
+//gets an express app, tells it that we're using JSON, gives it the client site and the comment table model
 var app = express()
 app.use(bodyParser.json())
 
@@ -39,7 +43,7 @@ app.use(express.static(path.join(__dirname, "webcomic-website", "dist")))
 
 app.use("/api", api_routes(comment))
 
-
+// error handling
 app.use(function (req, res, next) {
   res.status(404).send("Not Found")
 })
@@ -49,6 +53,7 @@ app.use(function (err, req, res, next) {
   res.status(500).send("Server Error")
 })
 
+// makes sure we're using the appropreate port for local vs live. 
 var server = app.listen(process.env.PORT || 3000, function () {
   console.log("app running on port", server.address().port)
 })

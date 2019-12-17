@@ -25,7 +25,7 @@
 	margin: .25em;
 }
 .butt:hover{
-	background-color: lightgrey;
+	background-color: orangered;
 }
 .narrow{
 	padding: .25em .65em;

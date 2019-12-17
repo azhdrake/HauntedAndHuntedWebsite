@@ -1,31 +1,28 @@
-<template>
+<template> <!-- the add a new comment form. -->
   <div>
     <div class="add-comment-section">
       <form>
         <h4 class="title-but-like-less-so">Add New Comment</h4>
+        <!-- The errors section, only shows if there is an active error -->
         <div class="error-message" v-show="errors.length > 0">
           <li v-for="error in errors" v-bind:key="error"> {{ error }} </li>
         </div>
         <table class="add-comment">
           <tr class="table-headers">
-
             <th class="left-column">
               <label for="name">Handle</label>
             </th>
             <th class="data-entry">
               <input id="name" v-model.trim="newCommentUser">
             </th>
-
           </tr>
           <tr>
-
             <td class="left-column">
               <label for="comment">Comment</label>
             </td>
             <td class="data-entry">
               <textarea id="comment" v-model.trim="newCommentText"></textarea>
             </td>
-
           </tr>
         </table>
 
@@ -43,7 +40,6 @@
       return {
 				newCommentUser:"",
         newCommentText: "",
-
 				errors: []
 			}
     },
@@ -52,6 +48,7 @@
     },
 		methods: {
       addComment() {
+        // makes sure that both fields are filled out and either throws an error or posts the comment. If a comment is posted the errors array gets reset.
         if (!this.newCommentUser) {
 					this.errors.push("A display name is required")
         }
@@ -68,6 +65,7 @@
 			}
     },
     watch: {
+      // clears the errors array if the pagenumber changes.
       pageNumber: function () {
         this.errors = []
       }

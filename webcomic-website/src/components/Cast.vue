@@ -1,4 +1,4 @@
-<template>
+<template> <!-- It's a cast page. Nothin' too fancy here. -->
   <div>
     <hr />
     <h1 class="title">CAST</h1>

@@ -25,5 +25,6 @@ export default {
   	display: inline-block;
     width: 16%;
     text-align: center; 
+    text-decoration: underline;
   }
 </style>

@@ -8,6 +8,7 @@ import Search from "@/components/Search"
 import Archive from "@/components/Archive"
 
 export default new Router({
+  //history mode get's rid of the # in the URL but things were acting weird when I had it enabled. 
 //  mode: 'history',
   routes: [
     {

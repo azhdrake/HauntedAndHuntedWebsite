@@ -1,4 +1,4 @@
-<template>
+<template> <!-- The table that holds all the comments. -->
   <div class="comment-component">
     <h4 class="title">Comments</h4>
 
@@ -9,6 +9,7 @@
           <th class="comment-text">Comment</th>
           <th class="delete-button">Delete</th>
         </tr>
+        <!-- loops through all the comments, checks to see if they are from this page, and sends the comment to commentRow for displaying if it is.  -->
           <CommentRow v-for="comment in comments" v-bind:accesskey="comment.id"
                       v-if="comment.pageNumber == pageNumber"
                       v-bind:comment="comment"
@@ -48,6 +49,7 @@
         this.$emit("comment-deleted", comment)
       },
       updateComments() {
+        // pulls the comments from the database.
         this.$comment_api.getAllComments().then(allComments => {
           this.comments = allComments
           this.pagesComments = this.comments
@@ -55,6 +57,7 @@
       }
     },
     mounted() {
+      //when page loads, updates the comments.
       this.updateComments
     }
   }

@@ -1,4 +1,4 @@
-<template> <!-- The template for the site as a whole. The only constant I have is the header (banner.vue) -->
+<template> <!-- The template for the site as a whole. The only constant I have is the header (banner.vue) and the background images, which probably could have been applied better but this is how I figured out how to do it. -->
   <div id="app">
     <div class="bg-image misc">
       <div class="bg-image misc-2">
@@ -53,6 +53,10 @@
 	  overflow:hidden;
 	  background-color: #E3C598;
   }
+  a{
+    color: #CF5230;
+  }
+  /* Everything below here is just background styling. */
   .haunted{
     background-image: url("assets/HauntedSpeech.png");
     background-position-x: 0;
@@ -67,6 +71,7 @@
     background-attachment:fixed;
     background-size:25%;
     background-repeat: no-repeat;
+    height: 100vh;
   }
   .misc-2{
     background-image: url("assets/IDontKnowWhatThisSays.png");
@@ -80,8 +85,5 @@
   body {
     background-color: #65352C;
     margin: 0;
-  }
-  a{
-    color: #CF5230;
   }
 </style>

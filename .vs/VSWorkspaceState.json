@@ -1,15 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\model",
-    "\\routes",
     "\\webcomic-website",
     "\\webcomic-website\\src",
-    "\\webcomic-website\\src\\assets",
     "\\webcomic-website\\src\\components",
     "\\webcomic-website\\src\\router",
     "\\webcomic-website\\src\\services"
   ],
-  "SelectedNode": "\\webcomic-website\\src\\router\\index.js",
+  "SelectedNode": "\\webcomic-website\\src\\components\\Banner.vue",
   "PreviewInSolutionExplorer": false
 }

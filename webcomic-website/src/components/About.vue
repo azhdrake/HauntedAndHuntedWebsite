@@ -1,4 +1,4 @@
-<template>
+<template> <!-- It's an about page! It talks about the comic. -->
   <div class="about-page">
     <hr />
     <h1 class="title">ABOUT</h1>
