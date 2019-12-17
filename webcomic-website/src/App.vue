@@ -10,9 +10,9 @@
             </section>
           </div>
         </div>
-        </div>
       </div>
     </div>
+  </div>
 </template>
 
 <script>
@@ -71,7 +71,7 @@
     background-attachment:fixed;
     background-size:25%;
     background-repeat: no-repeat;
-    height: 100vh;
+   
   }
   .misc-2{
     background-image: url("assets/IDontKnowWhatThisSays.png");
